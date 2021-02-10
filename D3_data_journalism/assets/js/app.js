@@ -23,7 +23,7 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 
-// Import Data
+// Import Data from CSV
 d3.csv("../assets/data/data.csv").then(function(newsData) {
     console.log(newsData);
 
