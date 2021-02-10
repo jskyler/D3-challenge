@@ -54,6 +54,7 @@ d3.csv("../assets/data/data.csv").then(function(newsData) {
     chartGroup.append("g")
       .call(leftAxis);
 
+    // Create circles
     chartGroup.selectAll("circle")
       .data(newsData)
       .enter()
@@ -64,6 +65,7 @@ d3.csv("../assets/data/data.csv").then(function(newsData) {
       .attr("fill", "steelblue")
       .attr("opacity", ".5");
   
+    // Add and position abbreviations to the circles
     chartGroup.append("text")
       .style("font-size", "12px")
       .style("fill", "white")
