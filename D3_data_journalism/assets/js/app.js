@@ -81,7 +81,7 @@ d3.csv("../assets/data/data.csv").then(function(newsData) {
       .attr("transform", "rotate(-90)")
       .attr("y", 0 - margin.left + 40)
       .attr("x", 0 - (height / 1.5))
-      .attr("dy", "1em") // NOTE 'em' is 10px units and 'd'  is like a 'delta' up the y-axis in this case
+      .attr("dy", "1em")
       .attr("class", "axisText")
       .text("Lacks Healthcare (%)");
 
