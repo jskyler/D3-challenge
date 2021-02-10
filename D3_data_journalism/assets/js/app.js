@@ -12,7 +12,7 @@ var margin = {
 var width = svgWidth - margin.left - margin.right;
 var height = svgHeight - margin.top - margin.bottom;
 
-
+// Create SVG wrapper and append SVG group to hold and position the chart
 var svg = d3.select("#scatter")
   .append("svg")
   .attr("width", svgWidth)
@@ -22,6 +22,7 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 
+// Import Data
 d3.csv("../assets/data/data.csv").then(function(newsData) {
     console.log(newsData);
 
