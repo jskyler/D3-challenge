@@ -49,7 +49,7 @@ d3.csv("../assets/data/data.csv").then(function(newsData) {
     chartGroup.append("g")
       .call(leftAxis);
 
-    var circlesGroup = chartGroup.selectAll("circle")
+    chartGroup.selectAll("circle")
       .data(newsData)
       .enter()
       .append("circle")
@@ -59,6 +59,23 @@ d3.csv("../assets/data/data.csv").then(function(newsData) {
       .attr("fill", "steelblue")
       .attr("opacity", ".5");
   
+    chartGroup.append("text")
+      .style("font-size", "12px")
+      .style("fill", "white")
+      .selectAll("tspan")
+      .data(newsData)
+      .enter()
+      .append("tspan")
+        .attr("x", function(data) {
+          return xLinearScale(data.poverty -.15);
+        })
+        .attr("y", function(data) {
+          return yLinearScale(data.healthcare -.2);
+        })
+        .text(function(data) {
+          return data.abbr
+        });
+
 
     chartGroup.append("text")
       .attr("transform", "rotate(-90)")
