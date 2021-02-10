@@ -27,7 +27,7 @@ var chartGroup = svg.append("g")
 d3.csv("../assets/data/data.csv").then(function(newsData) {
     console.log(newsData);
 
-    
+
     // Parse data
     newsData.forEach(function(data) {
         data.healthcare = +data.healthcare;
@@ -44,9 +44,11 @@ d3.csv("../assets/data/data.csv").then(function(newsData) {
       .domain([4, d3.max(newsData, d => d.healthcare)])
       .range([height, 0]);
 
+
     // Create axis functions
     var bottomAxis = d3.axisBottom(xLinearScale);
     var leftAxis = d3.axisLeft(yLinearScale);
+
 
     // Append axes to the chart
     chartGroup.append("g")
@@ -56,6 +58,7 @@ d3.csv("../assets/data/data.csv").then(function(newsData) {
 
     chartGroup.append("g")
       .call(leftAxis);
+
 
     // Create circles
     chartGroup.selectAll("circle")
@@ -68,6 +71,7 @@ d3.csv("../assets/data/data.csv").then(function(newsData) {
       .attr("fill", "steelblue")
       .attr("opacity", ".5");
   
+
     // Add and position abbreviations to the circles
     chartGroup.append("text")
       .style("font-size", "12px")
@@ -86,6 +90,7 @@ d3.csv("../assets/data/data.csv").then(function(newsData) {
           return data.abbr
         });
 
+        
     // Create axes labels
     chartGroup.append("text")
       .attr("transform", "rotate(-90)")
