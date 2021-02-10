@@ -97,5 +97,4 @@ d3.csv("../assets/data/data.csv").then(function(newsData) {
       .attr("class", "axisText")
       .text("In Poverty (%)");
 
-
 });
