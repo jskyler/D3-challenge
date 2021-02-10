@@ -83,7 +83,7 @@ d3.csv("../assets/data/data.csv").then(function(newsData) {
           return data.abbr
         });
 
-
+    // Create axes labels
     chartGroup.append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", 0 - margin.left + 40)
