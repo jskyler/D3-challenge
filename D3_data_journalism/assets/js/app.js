@@ -27,11 +27,13 @@ var chartGroup = svg.append("g")
 d3.csv("../assets/data/data.csv").then(function(newsData) {
     console.log(newsData);
 
+    
     // Parse data
     newsData.forEach(function(data) {
         data.healthcare = +data.healthcare;
         data.poverty = +data.poverty;
     });
+
 
     // Create scale functions
     var xLinearScale = d3.scaleLinear()
