@@ -41,9 +41,11 @@ d3.csv("../assets/data/data.csv").then(function(newsData) {
       .domain([4, d3.max(newsData, d => d.healthcare)])
       .range([height, 0]);
 
+    // Create axis functions
     var bottomAxis = d3.axisBottom(xLinearScale);
     var leftAxis = d3.axisLeft(yLinearScale);
 
+    // Append axes to the chart
     chartGroup.append("g")
       .classed("x-axis", true)
       .attr("transform", `translate(0, ${height})`)
