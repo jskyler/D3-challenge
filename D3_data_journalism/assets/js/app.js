@@ -1,4 +1,5 @@
-// @TODO: YOUR CODE HERE!
+//D3 Challenge
+
 var svgWidth = 960;
 var svgHeight = 500;
 
